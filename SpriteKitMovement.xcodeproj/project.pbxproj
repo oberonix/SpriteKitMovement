@@ -22,6 +22,7 @@
 		F6DD03EE18540DC200A0AD80 /* SpriteKitMovementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DD03ED18540DC200A0AD80 /* SpriteKitMovementTests.m */; };
 		F6DD03FA18540DF900A0AD80 /* Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = F6DD03F718540DF900A0AD80 /* Marker.png */; };
 		F6DD03FB18540DF900A0AD80 /* QueuedMoveScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DD03F918540DF900A0AD80 /* QueuedMoveScene.m */; };
+		F6DD03FE18541D5400A0AD80 /* queuedMovement.gif in Resources */ = {isa = PBXBuildFile; fileRef = F6DD03FD18541D5400A0AD80 /* queuedMovement.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		F6DD03F718540DF900A0AD80 /* Marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Marker.png; sourceTree = "<group>"; };
 		F6DD03F818540DF900A0AD80 /* QueuedMoveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueuedMoveScene.h; sourceTree = "<group>"; };
 		F6DD03F918540DF900A0AD80 /* QueuedMoveScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueuedMoveScene.m; sourceTree = "<group>"; };
+		F6DD03FD18541D5400A0AD80 /* queuedMovement.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = queuedMovement.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		F6DD03C518540DC200A0AD80 /* SpriteKitMovement */ = {
 			isa = PBXGroup;
 			children = (
+				F6DD03FD18541D5400A0AD80 /* queuedMovement.gif */,
 				F6DD03F818540DF900A0AD80 /* QueuedMoveScene.h */,
 				F6DD03F918540DF900A0AD80 /* QueuedMoveScene.m */,
 				F6DD03D118540DC200A0AD80 /* MainMenu.xib */,
@@ -246,6 +249,7 @@
 			files = (
 				F6DD03DA18540DC200A0AD80 /* Spaceship.png in Resources */,
 				F6DD03DC18540DC200A0AD80 /* Images.xcassets in Resources */,
+				F6DD03FE18541D5400A0AD80 /* queuedMovement.gif in Resources */,
 				F6DD03CA18540DC200A0AD80 /* InfoPlist.strings in Resources */,
 				F6DD03D018540DC200A0AD80 /* Credits.rtf in Resources */,
 				F6DD03D218540DC200A0AD80 /* MainMenu.xib in Resources */,
