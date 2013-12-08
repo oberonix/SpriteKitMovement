@@ -13,7 +13,6 @@
 		F6DD03CC18540DC200A0AD80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DD03CB18540DC200A0AD80 /* main.m */; };
 		F6DD03D018540DC200A0AD80 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F6DD03CE18540DC200A0AD80 /* Credits.rtf */; };
 		F6DD03D218540DC200A0AD80 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6DD03D118540DC200A0AD80 /* MainMenu.xib */; };
-		F6DD03D418540DC200A0AD80 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DD03D318540DC200A0AD80 /* MyScene.m */; };
 		F6DD03D718540DC200A0AD80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DD03D618540DC200A0AD80 /* AppDelegate.m */; };
 		F6DD03DA18540DC200A0AD80 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = F6DD03D918540DC200A0AD80 /* Spaceship.png */; };
 		F6DD03DC18540DC200A0AD80 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6DD03DB18540DC200A0AD80 /* Images.xcassets */; };
@@ -21,6 +20,8 @@
 		F6DD03E418540DC200A0AD80 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DD03BD18540DC200A0AD80 /* Cocoa.framework */; };
 		F6DD03EC18540DC200A0AD80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6DD03EA18540DC200A0AD80 /* InfoPlist.strings */; };
 		F6DD03EE18540DC200A0AD80 /* SpriteKitMovementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DD03ED18540DC200A0AD80 /* SpriteKitMovementTests.m */; };
+		F6DD03FA18540DF900A0AD80 /* Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = F6DD03F718540DF900A0AD80 /* Marker.png */; };
+		F6DD03FB18540DF900A0AD80 /* QueuedMoveScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DD03F918540DF900A0AD80 /* QueuedMoveScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +47,6 @@
 		F6DD03CD18540DC200A0AD80 /* SpriteKitMovement-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpriteKitMovement-Prefix.pch"; sourceTree = "<group>"; };
 		F6DD03CF18540DC200A0AD80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		F6DD03D118540DC200A0AD80 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		F6DD03D318540DC200A0AD80 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		F6DD03D518540DC200A0AD80 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		F6DD03D618540DC200A0AD80 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F6DD03D818540DC200A0AD80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F6DD03D918540DC200A0AD80 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
@@ -57,6 +56,9 @@
 		F6DD03E918540DC200A0AD80 /* SpriteKitMovementTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpriteKitMovementTests-Info.plist"; sourceTree = "<group>"; };
 		F6DD03EB18540DC200A0AD80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F6DD03ED18540DC200A0AD80 /* SpriteKitMovementTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteKitMovementTests.m; sourceTree = "<group>"; };
+		F6DD03F718540DF900A0AD80 /* Marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Marker.png; sourceTree = "<group>"; };
+		F6DD03F818540DF900A0AD80 /* QueuedMoveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueuedMoveScene.h; sourceTree = "<group>"; };
+		F6DD03F918540DF900A0AD80 /* QueuedMoveScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueuedMoveScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,12 +126,13 @@
 		F6DD03C518540DC200A0AD80 /* SpriteKitMovement */ = {
 			isa = PBXGroup;
 			children = (
+				F6DD03F818540DF900A0AD80 /* QueuedMoveScene.h */,
+				F6DD03F918540DF900A0AD80 /* QueuedMoveScene.m */,
 				F6DD03D118540DC200A0AD80 /* MainMenu.xib */,
-				F6DD03D318540DC200A0AD80 /* MyScene.m */,
-				F6DD03D518540DC200A0AD80 /* MyScene.h */,
 				F6DD03D618540DC200A0AD80 /* AppDelegate.m */,
 				F6DD03D818540DC200A0AD80 /* AppDelegate.h */,
 				F6DD03D918540DC200A0AD80 /* Spaceship.png */,
+				F6DD03F718540DF900A0AD80 /* Marker.png */,
 				F6DD03DB18540DC200A0AD80 /* Images.xcassets */,
 				F6DD03C618540DC200A0AD80 /* Supporting Files */,
 			);
@@ -246,6 +249,7 @@
 				F6DD03CA18540DC200A0AD80 /* InfoPlist.strings in Resources */,
 				F6DD03D018540DC200A0AD80 /* Credits.rtf in Resources */,
 				F6DD03D218540DC200A0AD80 /* MainMenu.xib in Resources */,
+				F6DD03FA18540DF900A0AD80 /* Marker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,8 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6DD03D418540DC200A0AD80 /* MyScene.m in Sources */,
 				F6DD03CC18540DC200A0AD80 /* main.m in Sources */,
+				F6DD03FB18540DF900A0AD80 /* QueuedMoveScene.m in Sources */,
 				F6DD03D718540DC200A0AD80 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
