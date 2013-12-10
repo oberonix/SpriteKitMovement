@@ -7,6 +7,7 @@
 //
 
 #import "QueuedMoveScene.h"
+#import "GridMoveScene.h"
 
 @implementation QueuedMoveScene
 
@@ -72,7 +73,16 @@
         case 53: //ESC - quit
             [[NSApplication sharedApplication] terminate:nil];
             break;
+        case 49: //space - change scenes
+            [self changeScene];
+            break;
     }
+}
+
+-(void)changeScene {
+    SKScene *gridScene = [GridMoveScene sceneWithSize:self.size];
+    SKTransition *doors = [SKTransition doorsOpenVerticalWithDuration:0.5];
+    [self.view presentScene:gridScene transition:doors];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
