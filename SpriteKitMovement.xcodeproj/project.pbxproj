@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6353E3418582146006855D3 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = F6353E3318582146006855D3 /* tile.png */; };
 		F69187CA1856D3D400251CB2 /* GridMoveScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F69187C91856D3D400251CB2 /* GridMoveScene.m */; };
 		F6DD03BE18540DC200A0AD80 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DD03BD18540DC200A0AD80 /* Cocoa.framework */; };
 		F6DD03C018540DC200A0AD80 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DD03BF18540DC200A0AD80 /* SpriteKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F6353E3318582146006855D3 /* tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile.png; sourceTree = "<group>"; };
 		F69187C81856D3D400251CB2 /* GridMoveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridMoveScene.h; sourceTree = "<group>"; };
 		F69187C91856D3D400251CB2 /* GridMoveScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridMoveScene.m; sourceTree = "<group>"; };
 		F6DD03BA18540DC200A0AD80 /* SpriteKitMovement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKitMovement.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 		F6DD03C518540DC200A0AD80 /* SpriteKitMovement */ = {
 			isa = PBXGroup;
 			children = (
+				F6353E3318582146006855D3 /* tile.png */,
 				F69187C81856D3D400251CB2 /* GridMoveScene.h */,
 				F69187C91856D3D400251CB2 /* GridMoveScene.m */,
 				F6DD03FD18541D5400A0AD80 /* queuedMovement.gif */,
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6DD03DA18540DC200A0AD80 /* Spaceship.png in Resources */,
+				F6353E3418582146006855D3 /* tile.png in Resources */,
 				F6DD03DC18540DC200A0AD80 /* Images.xcassets in Resources */,
 				F6DD03FE18541D5400A0AD80 /* queuedMovement.gif in Resources */,
 				F6DD03CA18540DC200A0AD80 /* InfoPlist.strings in Resources */,

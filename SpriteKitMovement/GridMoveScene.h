@@ -12,5 +12,6 @@
 {
     @private
     SKSpriteNode *myShip;
+    NSMutableArray *map;
 }
 @end

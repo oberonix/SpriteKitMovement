@@ -19,7 +19,27 @@
         myShip = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
         myShip.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         myShip.scale = 0.25;
+        
+        SKTexture *tileTexture = [SKTexture textureWithImageNamed:@"tile"];
+        
+        map = [NSMutableArray arrayWithCapacity:10];        for (int i = 0; i < 10; i++) {
+            NSMutableArray *row = [NSMutableArray arrayWithCapacity:10];
+            [map addObject:row];
+            for (int j = 0; j < 7; j++) {
+                [row addObject:[SKSpriteNode spriteNodeWithTexture:tileTexture]];
+            }
+        }
+        int x = 0;
+        for (NSMutableArray *row in map) {
+            int y = 0;
+            for (SKSpriteNode *tile in row) {
+                tile.position = CGPointMake((x * 100) + 62, (y++ * 100) + 84);
+                [self addChild:tile];
+            }
+            x++;
+        }
         [self addChild:myShip];
+
     }
     return self;
 }
