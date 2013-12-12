@@ -13,5 +13,6 @@
     @private
     SKSpriteNode *myShip;
     NSMutableArray *map;
+    bool moving;
 }
 @end

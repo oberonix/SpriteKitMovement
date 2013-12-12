@@ -44,6 +44,23 @@
     return self;
 }
 
+-(void)mouseDown:(NSEvent *)theEvent {
+    moving = YES;
+    CGFloat scale = myShip.xScale;
+    CGFloat duration = 2 * (0.5 - scale);
+    [myShip removeAllActions];
+    [myShip runAction:[SKAction scaleTo:0.5 duration:duration]];
+}
+
+-(void)mouseUp:(NSEvent *)theEvent {
+    moving = NO;
+    CGFloat scale = myShip.xScale;
+    CGFloat duration = (scale - 0.25) * 2;
+    [myShip removeAllActions];
+    [myShip runAction:[SKAction scaleTo:0.25 duration:duration]];
+}
+
+
 -(void)keyDown:(NSEvent *)theEvent {
     unsigned short x = [theEvent keyCode];
     switch (x) {
@@ -55,6 +72,15 @@
             break;
     }
 }
+
+-(void)update:(CFTimeInterval)currentTime {
+    if(moving) {
+        NSPoint mouseLocation = [self convertPointFromView:[NSEvent mouseLocation]];
+//        NSPoint mouseLocation = [NSEvent mouseLocation];
+        [myShip setPosition:CGPointMake(mouseLocation.x - 410, mouseLocation.y - 175)];
+    }
+}
+
 
 -(void)changeScene {
     SKScene *queueScene = [QueuedMoveScene sceneWithSize:self.size];
