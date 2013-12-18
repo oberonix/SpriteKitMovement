@@ -40,7 +40,12 @@
             x++;
         }
         [self addChild:myShip];
-
+        
+        //init bounding values, ship will touch edge since it's double size while moving
+        minPositionX = myShip.size.width;
+        minPositionY = myShip.size.height;
+        maxPositionX = size.width - myShip.size.width;
+        maxPositionY = size.height - myShip.size.height;
     }
     return self;
 }
@@ -86,9 +91,15 @@
     return CGPointMake(mouseLocation.x - 410, mouseLocation.y - 175);
 }
 
+//method to bound the mouse cursor to within the window including ship size offset
+-(CGPoint)getBoundedMousePosition {
+    CGPoint mousePosition = [self getMousePosition];
+    return CGPointMake(MIN(MAX(mousePosition.x, minPositionX), maxPositionX), MIN(MAX(mousePosition.y, minPositionY), maxPositionY));
+}
+
 -(void)update:(CFTimeInterval)currentTime {
     if(moving) {
-        [myShip setPosition:[self getMousePosition]];
+        [myShip setPosition:[self getBoundedMousePosition]];
     }
 }
 

@@ -14,12 +14,17 @@
         SKSpriteNode *myShip;
         NSMutableArray *map;
         bool moving;
+        int maxPositionX;
+        int maxPositionY;
+        int minPositionX;
+        int minPositionY;
     }
     -(id)initWithSize:(CGSize)size;
     -(void)mouseDown:(NSEvent *)theEvent;
     -(void)mouseUp:(NSEvent *)theEvent;
     -(void)keyDown:(NSEvent *)theEvent;
     -(CGPoint)getMousePosition;
+    -(CGPoint)getBoundedMousePosition;
     -(void)update:(CFTimeInterval)currentTime;
     -(void)changeScene;
 @end
