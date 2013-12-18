@@ -20,6 +20,11 @@
         SKNode *markerNode;
         SKNode *lineNode;
     }
+    -(id)initWithSize:(CGSize)size;
+    -(void)mouseDown:(NSEvent *)theEvent;
+    -(void)keyDown:(NSEvent *)theEvent;
+    -(void)changeScene;
+    -(void)update:(CFTimeInterval)currentTime;
     -(void)runNextMoveAction;
     -(SKAction *)eventToMoveAction:(NSEvent *)event;
     -(void)onMoveDone;

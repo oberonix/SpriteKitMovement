@@ -58,11 +58,13 @@
 }
 
 -(void)mouseUp:(NSEvent *)theEvent {
-    moving = NO;
-    CGFloat scale = myShip.xScale;
-    CGFloat duration = (scale - 0.25) * 2;
-    [myShip removeAllActions];
-    [myShip runAction:[SKAction scaleTo:0.25 duration:duration]];
+    if(moving) {
+        moving = NO;
+        CGFloat scale = myShip.xScale;
+        CGFloat duration = (scale - 0.25) * 2;
+        [myShip removeAllActions];
+        [myShip runAction:[SKAction scaleTo:0.25 duration:duration]];
+    }
 }
 
 
@@ -89,7 +91,6 @@
         [myShip setPosition:[self getMousePosition]];
     }
 }
-
 
 -(void)changeScene {
     SKScene *queueScene = [QueuedMoveScene sceneWithSize:self.size];
