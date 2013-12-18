@@ -22,7 +22,8 @@
         
         SKTexture *tileTexture = [SKTexture textureWithImageNamed:@"tile"];
         
-        map = [NSMutableArray arrayWithCapacity:10];        for (int i = 0; i < 10; i++) {
+        map = [NSMutableArray arrayWithCapacity:10];
+        for (int i = 0; i < 10; i++) {
             NSMutableArray *row = [NSMutableArray arrayWithCapacity:10];
             [map addObject:row];
             for (int j = 0; j < 7; j++) {
@@ -45,11 +46,15 @@
 }
 
 -(void)mouseDown:(NSEvent *)theEvent {
-    moving = YES;
-    CGFloat scale = myShip.xScale;
-    CGFloat duration = 2 * (0.5 - scale);
-    [myShip removeAllActions];
-    [myShip runAction:[SKAction scaleTo:0.5 duration:duration]];
+    //determine if mouse is close to ship
+    CGPoint mousePosition = [self getMousePosition];
+    if(abs(mousePosition.x - myShip.position.x) < myShip.size.width / 2 && abs(mousePosition.y - myShip.position.y) < myShip.size.height / 2) {
+        moving = YES;
+        CGFloat scale = myShip.xScale;
+        CGFloat duration = 2 * (0.5 - scale);
+        [myShip removeAllActions];
+        [myShip runAction:[SKAction scaleTo:0.5 duration:duration]];
+    }
 }
 
 -(void)mouseUp:(NSEvent *)theEvent {
@@ -73,11 +78,15 @@
     }
 }
 
+-(CGPoint)getMousePosition {
+    NSPoint mouseLocation = [self convertPointFromView:[NSEvent mouseLocation]];
+    //magic offsets, not sure why this is yet
+    return CGPointMake(mouseLocation.x - 410, mouseLocation.y - 175);
+}
+
 -(void)update:(CFTimeInterval)currentTime {
     if(moving) {
-        NSPoint mouseLocation = [self convertPointFromView:[NSEvent mouseLocation]];
-//        NSPoint mouseLocation = [NSEvent mouseLocation];
-        [myShip setPosition:CGPointMake(mouseLocation.x - 410, mouseLocation.y - 175)];
+        [myShip setPosition:[self getMousePosition]];
     }
 }
 
