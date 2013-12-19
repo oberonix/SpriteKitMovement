@@ -57,8 +57,9 @@
         moving = YES;
         CGFloat scale = myShip.xScale;
         CGFloat duration = 2 * (0.5 - scale);
+        SKAction *fadeAndGrow = [SKAction group:@[[SKAction fadeAlphaTo:0.5 duration:duration], [SKAction scaleTo:0.5 duration:duration]]];
         [myShip removeAllActions];
-        [myShip runAction:[SKAction scaleTo:0.5 duration:duration]];
+        [myShip runAction:fadeAndGrow];
     }
 }
 
@@ -67,8 +68,9 @@
         moving = NO;
         CGFloat scale = myShip.xScale;
         CGFloat duration = (scale - 0.25) * 2;
+        SKAction *fadeAndShrink = [SKAction group:@[[SKAction fadeAlphaTo:1 duration:duration], [SKAction scaleTo:0.25 duration:duration]]];
         [myShip removeAllActions];
-        [myShip runAction:[SKAction scaleTo:0.25 duration:duration]];
+        [myShip runAction:fadeAndShrink];
     }
 }
 
