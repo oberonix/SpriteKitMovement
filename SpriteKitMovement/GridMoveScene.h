@@ -33,5 +33,7 @@
     -(CGPoint)getMousePosition;
     -(CGPoint)getBoundedMousePosition;
     -(void)update:(CFTimeInterval)currentTime;
+    -(void)updateSelectedSquare:(CGPoint)mousePosition;
+    -(CGPoint)getSquareNearestToPosition:(CGPoint)position;
     -(void)changeScene;
 @end
