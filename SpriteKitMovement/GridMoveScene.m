@@ -35,17 +35,34 @@
             int y = 0;
             for (SKSpriteNode *tile in row) {
                 tile.position = CGPointMake((x * 100) + 62, (y++ * 100) + 84);
+                tile.zPosition = 0;
                 [self addChild:tile];
             }
             x++;
         }
         [self addChild:myShip];
+        myShip.zPosition = 2;
+        
+        selectedSquare = [SKSpriteNode spriteNodeWithColor:[NSColor greenColor] size:CGSizeMake(100, 100)];
+        selectedSquare.alpha = 0.25;
+        selectedSquare.zPosition = 1;
         
         //init bounding values, ship will touch edge since it's double size while moving
         minPositionX = myShip.size.width;
         minPositionY = myShip.size.height;
         maxPositionX = size.width - myShip.size.width;
         maxPositionY = size.height - myShip.size.height;
+        
+        
+        xPadding = 62;
+        yPadding = 84;
+        squareSize = 100;
+        halfSquareSize = squareSize / 2;
+        
+        //magic offsets, not sure why this is yet
+        //mouse position isn't accurate without them though
+        mouseXOffset = 410;
+        mouseYOffset = 175;
     }
     return self;
 }
@@ -60,6 +77,7 @@
         SKAction *fadeAndGrow = [SKAction group:@[[SKAction fadeAlphaTo:0.5 duration:duration], [SKAction scaleTo:0.5 duration:duration]]];
         [myShip removeAllActions];
         [myShip runAction:fadeAndGrow];
+        [self addChild:selectedSquare];
     }
 }
 
@@ -71,6 +89,7 @@
         SKAction *fadeAndShrink = [SKAction group:@[[SKAction fadeAlphaTo:1 duration:duration], [SKAction scaleTo:0.25 duration:duration]]];
         [myShip removeAllActions];
         [myShip runAction:fadeAndShrink];
+        [selectedSquare removeFromParent];
     }
 }
 
@@ -89,8 +108,7 @@
 
 -(CGPoint)getMousePosition {
     NSPoint mouseLocation = [self convertPointFromView:[NSEvent mouseLocation]];
-    //magic offsets, not sure why this is yet
-    return CGPointMake(mouseLocation.x - 410, mouseLocation.y - 175);
+    return CGPointMake(mouseLocation.x - mouseXOffset, mouseLocation.y - mouseYOffset);
 }
 
 //method to bound the mouse cursor to within the window including ship size offset
@@ -101,8 +119,22 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     if(moving) {
-        [myShip setPosition:[self getBoundedMousePosition]];
+        CGPoint mousePosition = [self getBoundedMousePosition];
+        [myShip setPosition:mousePosition];
+        [self updateSelectedSquare:mousePosition];
     }
+}
+
+-(void)updateSelectedSquare:(CGPoint)mousePosition {
+    [selectedSquare setPosition:[self getSquareNearestToPosition:mousePosition]];
+}
+
+-(CGPoint)getSquareNearestToPosition:(CGPoint)position {
+    //calculate which square the mouse pointer correlates to
+    //return the center position of that square
+    int newX = ((int)((position.x - xPadding + halfSquareSize) / squareSize)) * squareSize + xPadding;
+    int newY = ((int)((position.y - yPadding + halfSquareSize) / squareSize)) * squareSize + yPadding;
+    return CGPointMake(newX, newY);
 }
 
 -(void)changeScene {

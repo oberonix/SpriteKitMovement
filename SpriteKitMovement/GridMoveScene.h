@@ -12,12 +12,19 @@
     {
         @private
         SKSpriteNode *myShip;
+        SKSpriteNode *selectedSquare;
         NSMutableArray *map;
         bool moving;
         int maxPositionX;
         int maxPositionY;
         int minPositionX;
         int minPositionY;
+        int xPadding;
+        int yPadding;
+        int squareSize;
+        int halfSquareSize;
+        int mouseXOffset;
+        int mouseYOffset;
     }
     -(id)initWithSize:(CGSize)size;
     -(void)mouseDown:(NSEvent *)theEvent;
