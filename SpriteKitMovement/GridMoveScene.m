@@ -86,9 +86,13 @@
         moving = NO;
         CGFloat scale = myShip.xScale;
         CGFloat duration = (scale - 0.25) * 2;
-        SKAction *fadeAndShrink = [SKAction group:@[[SKAction fadeAlphaTo:1 duration:duration], [SKAction scaleTo:0.25 duration:duration]]];
+        SKAction *fadeShrinkAndMove = [SKAction group:@[
+            [SKAction fadeAlphaTo:1 duration:duration],
+            [SKAction scaleTo:0.25 duration:duration],
+            [SKAction moveTo:[self getSquareNearestToPosition:[self getBoundedMousePosition]] duration:duration]
+        ]];
         [myShip removeAllActions];
-        [myShip runAction:fadeAndShrink];
+        [myShip runAction:fadeShrinkAndMove];
         [selectedSquare removeFromParent];
     }
 }
